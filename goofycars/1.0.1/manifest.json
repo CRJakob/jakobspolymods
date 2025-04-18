@@ -1,11 +1,10 @@
 {
-  "polymod": {
-    "name": "Goofy Cars",
-    "id": "goofycars",
-    "author": "CRJakob",
-    "targets": ["0.5.0"],
-    "main": "main.mod.js"
-  },
-  "dependencies": {
-  }
+    "polymod": {
+        "name": "Goofy Cars",
+        "id": "goofycars",
+        "author": "CRJakob",
+        "targets": ["0.5.0"],
+        "main": "main.mod.js"
+    },
+    "dependencies": []
 }
