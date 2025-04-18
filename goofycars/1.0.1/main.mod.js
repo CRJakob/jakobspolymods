@@ -1,4 +1,4 @@
-import { PolyMod } from "https://pml.orangy.cfd/0rangy/PolyModLoader/<target>/PolyModLoader.js";
+import { PolyMod } from "https://pml.orangy.cfd/0rangy/PolyModLoader/0.5.0/PolyModLoader.js";
 class goofycars extends PolyMod {
 
 }
