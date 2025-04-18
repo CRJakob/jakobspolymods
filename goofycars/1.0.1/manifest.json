@@ -6,5 +6,5 @@
         "targets": ["0.5.0"],
         "main": "main.mod.js"
     },
-    "dependencies": {}
+    "dependencies": []
 }
