@@ -8,8 +8,8 @@
     },
     "dependencies": [
         {
-    		"id": "carswitcher"
-            "version": "0.1.0"
+    			"id": "carswitcher",
+        		"version": "0.1.0"
         }
     ]
 }
