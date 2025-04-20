@@ -1,7 +1,9 @@
 import { PolyMod, MixinType } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
 
 class goofycars extends PolyMod {
+    alert('test')
     dependencyInit(mod) {
+        alert(mod.id)
         if(mod.id == 'carswitcher') {
             alert(mod.carModels)
             mod.carModels.push({
