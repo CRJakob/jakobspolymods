@@ -3,7 +3,7 @@ import { PolyMod, MixinType } from "https://pml.orangy.cfd/PolyTrackMods/PolyMod
 class goofycars extends PolyMod {
     dependencyInit(mod) {
         if(mod.id == 'carswitcher') {
-            mod.carList.push({
+            mod.carModels.push({
                 "name": "Poly Huracan",
                 "url": `${this.modBaseUrl}/${this.modVersion}/assets/huracan.glb`
             })
