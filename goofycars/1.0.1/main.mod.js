@@ -7,7 +7,7 @@ class GoofyCars extends PolyMod {
       // now this will actually run
       console.log(mod.carModels);
       mod.carModels.push({
-        "name"": "Poly Huracan",
+        "name": "Poly Huracan",
         "url": `${this.modBaseUrl}/${this.modVersion}/assets/huracan.glb`
       });
     }
