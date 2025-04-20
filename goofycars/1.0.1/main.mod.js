@@ -2,11 +2,8 @@
 import { PolyMod } from "https://cdn.jsdelivr.net/gh/0rangy/PolyModLoader@0.5.0/PolyModLoader.js";
 
 class GoofyCars extends PolyMod {
-  init(pml) {
-    console.log("✅ GoofyCars init – loader imported me!");
-  }
   dependencyInit(mod) {
-    if (mod.id === 'carswitcher') {
+    if (mod.id == 'carswitcher') {
       // now this will actually run
       console.log(mod.carModels);
       mod.carModels.push({
