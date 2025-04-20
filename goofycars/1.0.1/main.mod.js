@@ -1,10 +1,10 @@
-// before (doesn't match CarSwitcher):
-// import { PolyMod } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
-
 // after (identical to carswitcher):
 import { PolyMod } from "https://cdn.jsdelivr.net/gh/0rangy/PolyModLoader@0.5.0/PolyModLoader.js";
 
 class GoofyCars extends PolyMod {
+  init(pml) {
+    alert("✅ GoofyCars init – loader imported me!");
+  }
   dependencyInit(mod) {
     if (mod.id === 'carswitcher') {
       // now this will actually run
