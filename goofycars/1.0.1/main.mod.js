@@ -3,12 +3,12 @@ import { PolyMod } from "https://cdn.jsdelivr.net/gh/0rangy/PolyModLoader@0.5.0/
 
 class GoofyCars extends PolyMod {
   init(pml) {
-    alert("✅ GoofyCars init – loader imported me!");
+    console.log("✅ GoofyCars init – loader imported me!");
   }
   dependencyInit(mod) {
     if (mod.id === 'carswitcher') {
       // now this will actually run
-      alert(mod.carModels);
+      console.log(mod.carModels);
       mod.carModels.push({
         name: "Poly Huracan",
         url: `${this.modBaseUrl}/${this.modVersion}/assets/huracan.glb`
