@@ -7,8 +7,8 @@ class goofycars extends PolyMod {
                 "name": "Poly Huracan",
                 "url": `${this.modBaseUrl}/${this.modVersion}/assets/huracan.glb`
             })
-        };
-    };
+        }
+    }
 }
 
 export let polyMod = new goofycars();
