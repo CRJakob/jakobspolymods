@@ -5,8 +5,8 @@ class goofycars extends PolyMod {
     init = (pml) => {
         pml.getMod("carswitcher").carModels.push(
             {
-                "name": "Poly Huracan",
-                "url": `${this.modBaseUrl}/${this.modVersion}/assets/huracan.glb`
+                "name": "Dababy Car",
+                "url": `${this.modBaseUrl}/${this.modVersion}/assets/dababy.glb`
             }
         )
     }
