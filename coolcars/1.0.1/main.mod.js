@@ -27,7 +27,8 @@ class coolcars extends PolyMod {
             {
                 "name": "Nissan Skyline GTR",
                 "url": `${this.modBaseUrl}/${this.modVersion}/assets/nissan.glb`
-            }
+            },
+
         )
     }
 }
