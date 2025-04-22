@@ -1,17 +1,9 @@
 // after (identical to carswitcher):
 import { PolyMod } from "https://cdn.jsdelivr.net/gh/0rangy/PolyModLoader@0.5.0/PolyModLoader.js";
 
-class goofycars extends PolyMod {
+class coolcars extends PolyMod {
     init = (pml) => {
         pml.getMod("carswitcher").carModels.push(
-            {
-                "name": "Dababy Car",
-                "url": `${this.modBaseUrl}/${this.modVersion}/assets/dababy.glb`
-            },
-            {
-                "name": "Hitbox Car",
-                "url": `${this.modBaseUrl}/${this.modVersion}/assets/hitbox.glb`
-            },
             {
                 "name": "Audi R8",
                 "url": `${this.modBaseUrl}/${this.modVersion}/assets/audir8.glb`
@@ -40,4 +32,4 @@ class goofycars extends PolyMod {
     }
 }
 
-export let polyMod = new goofycars();
+export let polyMod = new coolcars();
