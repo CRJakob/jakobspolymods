@@ -21,7 +21,7 @@ class coolcars extends PolyMod {
                 "url": `${this.modBaseUrl}/${this.modVersion}/assets/svj.glb`
             },
             {
-                "name": "Mclaren F1",
+                "name": "Mclaren F1 GT",
                 "url": `${this.modBaseUrl}/${this.modVersion}/assets/mclaren.glb`
             },
             {
