@@ -1,0 +1,15 @@
+{
+    "polymod": {
+        "name": "Cool Cars",
+        "id": "coolcars",
+        "author": "CRJakob",
+        "targets": ["0.5.0"],
+        "main": "main.mod.js"
+    },
+    "dependencies": [
+        {
+    			"id": "carswitcher",
+        		"version": "1.0.1"
+        }
+    ]
+}
