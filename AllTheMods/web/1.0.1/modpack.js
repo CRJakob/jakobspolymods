@@ -3,28 +3,32 @@ import { PolyMod } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.
 class allthemodsweb extends PolyMod {
     init = (pml) => {
         this.pml = pml;
+
         // Mod List
         this.modList = [
-            { url: "https://pml.orangy.cfd/GameBuilder202/ErrorPopupMod/main", version: "latest"},
-            { url: "http://pml.orangy.cfd/0rangy/OrangysPolyMods/main/polyproxy", version: "latest"},
-            { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/3decspeed", version: "latest"},
-            { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/husplits", version: "latest"},
-            { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/ghosttoggle", version: "latest"},
-            { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/carswitcher", version: "latest"},
-            { url: "https://pml.orangy.cfd/CRJakob/jakobspolymods/main/goofycars/", version: "latest"},
-            { url: "https://pml.orangy.cfd/CRJakob/jakobspolymods/main/coolcars/", version: "latest"}
+            { url: "https://pml.orangy.cfd/GameBuilder202/ErrorPopupMod/main",         version: "latest" },
+            { url: "http://pml.orangy.cfd/0rangy/OrangysPolyMods/main/polyproxy",    version: "latest" },
+            { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/3decspeed",    version: "latest" },
+            { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/husplits",     version: "latest" },
+            { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/ghosttoggle",  version: "latest" },
+            { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/carswitcher",  version: "latest" },
+            { url: "https://pml.orangy.cfd/CRJakob/jakobspolymods/main/goofycars/",   version: "latest" },
+            { url: "https://pml.orangy.cfd/CRJakob/jakobspolymods/main/coolcars/",    version: "latest" }
         ];
-        console.log(this.modList)
-        // Destructure {url, version} right in the parameter list
-        function importMod({ url: modurl, version: modversion }) {
-            window.polyModLoader.addMod({
-                base:    modurl,
-                version: modversion,
-                loaded:  true
+        console.log(this.modList);
+        //import and load mods
+        this.modList.forEach(({ url, version }) => {
+            // add mod and return id
+            let addedMod = window.polyModLoader.addMod({
+                base:   url,
+                version: version,
+                loaded: false
             });
-        }
-        // import each mod
-        this.modList.forEach(importMod);
+
+            // load mods
+            console.log(addedMod);
+            window.polyModLoader.setModLoaded(addedMod, true);
+        });
     }
 }
 
