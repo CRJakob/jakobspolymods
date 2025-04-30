@@ -1,0 +1,10 @@
+{
+    "polymod": {
+        "name": "All The Mods(web edition)",
+        "id": "atmweb",
+        "author": "CRJakob",
+        "targets": ["0.5.0"],
+        "main": "modpack.js"
+    },
+    "dependencies": []
+}

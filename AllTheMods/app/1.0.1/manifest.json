@@ -1,0 +1,10 @@
+{
+    "polymod": {
+        "name": "All The Mods(app edition)",
+        "id": "atmapp",
+        "author": "CRJakob",
+        "targets": ["0.5.0"],
+        "main": "modpack.js"
+    },
+    "dependencies": []
+}
