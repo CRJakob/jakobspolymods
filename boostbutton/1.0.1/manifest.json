@@ -1,0 +1,10 @@
+{
+    "polymod": {
+        "name": "Boost Button",
+        "id": "boostbutton",
+        "author": "CRJakob",
+        "targets": ["0.5.0"],
+        "main": "main.mod.js"
+    },
+    "dependencies": []
+}
