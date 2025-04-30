@@ -19,7 +19,7 @@ class allthemodsweb extends PolyMod {
         //import and load mods
         this.modList.forEach(({ url, version }) => {
             // add mod and return id
-            let addedMod = pml.addMod({
+            pml.addMod({
                 base:   url,
                 version: version,
                 loaded: false
