@@ -19,15 +19,15 @@ class allthemodsweb extends PolyMod {
         //import and load mods
         this.modList.forEach(({ url, version }) => {
             // add mod and return id
-            let addedMod = window.polyModLoader.addMod({
+            let addedMod = pml.addMod({
                 base:   url,
                 version: version,
                 loaded: false
-            });
+            }).then((mod) => pml.setModLoaded(mod, true));
 
             // load mods
-            console.log(addedMod);
-            window.polyModLoader.setModLoaded(addedMod, true);
+            //console.log(addedMod);
+            //window.polyModLoader.setModLoaded(addedMod, true);
         });
     }
 }
