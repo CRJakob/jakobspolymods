@@ -1,5 +1,5 @@
 // after (identical to carswitcher):
-import { PolyMod } from "https://cdn.jsdelivr.net/gh/0rangy/PolyModLoader@0.5.0/PolyModLoader.js";
+import { PolyMod } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
 
 class goofycars extends PolyMod {
     init = (pml) => {
