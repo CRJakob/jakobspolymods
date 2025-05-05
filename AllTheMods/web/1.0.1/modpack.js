@@ -16,6 +16,8 @@ class allthemodsweb extends PolyMod {
             { url: "https://pml.orangy.cfd/CRJakob/jakobspolymods/main/coolcars/",    version: "latest" }
         ];
         console.log(this.modList);
+        let allloadedmods = pml.getAllMods();
+        console.log(allloadedmods);
         //import and load mods
         this.modList.forEach(({ url, version }) => {
             // add mod and return id
