@@ -6,7 +6,7 @@ class allthemodsweb extends PolyMod {
 
         // Mod List
         this.modList = [
-            { url: "https://pml.orangy.cfd/GameBuilder202/ErrorPopupMod/main",         version: "latest" },
+            { url: "https://pml.orangy.cfd/GameBuilder202/ErrorPopupMod/main",        version: "latest" },
             { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/polyproxy",    version: "latest" },
             { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/3decspeed",    version: "latest" },
             { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/husplits",     version: "latest" },
