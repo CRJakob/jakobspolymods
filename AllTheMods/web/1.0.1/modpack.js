@@ -3,7 +3,6 @@ import { PolyMod } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.
 class allthemodsweb extends PolyMod {
     init = (pml) => {
         this.pml = pml;
-
         // Mod List
         this.modList = [
             { url: "https://pml.orangy.cfd/GameBuilder202/ErrorPopupMod/main",        version: "latest" },
