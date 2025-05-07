@@ -3,6 +3,28 @@ import { PolyMod } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.
 class allthemodsweb extends PolyMod {
     init = (pml) => {
         this.pml = pml;
+
+        // function to detect if run in Electron, ripped from is-electron library
+        function isElectron() {
+            // Renderer process
+            if (typeof window !== 'undefined' && typeof window.process === 'object' && window.process.type === 'renderer') {
+                return true;
+            }
+        
+            // Main process
+            if (typeof process !== 'undefined' && typeof process.versions === 'object' && !!process.versions.electron) {
+                return true;
+            }
+        
+            // Detect the user agent when the `nodeIntegration` option is set to false
+            if (typeof navigator === 'object' && typeof navigator.userAgent === 'string' && navigator.userAgent.indexOf('Electron') >= 0) {
+                return true;
+            }
+        
+            return false;
+        }
+
+
         // Mod List
         this.modList = [
             { url: "https://pml.orangy.cfd/GameBuilder202/ErrorPopupMod/main", version: "latest" },
@@ -17,6 +39,9 @@ class allthemodsweb extends PolyMod {
         console.log(this.modList);
         let allloadedmods = pml.getAllMods();
         console.log(allloadedmods);
+        let runningElectron = isElectron();
+        this.runningWeb = !runningElectron;
+        console.log(runningElectron);
 
         // function for loading mods
         function importMod({ url: modurl, version: modversion }) {
