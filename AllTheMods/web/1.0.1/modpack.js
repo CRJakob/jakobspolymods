@@ -1,6 +1,6 @@
 import { PolyMod } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
 
-class allthemodsweb extends PolyMod {
+class allthemods extends PolyMod {
     init = (pml) => {
         this.pml = pml;
 
@@ -91,4 +91,4 @@ class allthemodsweb extends PolyMod {
     }
 }
 
-export let polyMod = new allthemodsweb();
+export let polyMod = new allthemods();
