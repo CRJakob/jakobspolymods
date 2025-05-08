@@ -17,4 +17,4 @@ function isElectron() {
     return false;
 }
 
-module.exports = isElectron;
+export { isElectron }
