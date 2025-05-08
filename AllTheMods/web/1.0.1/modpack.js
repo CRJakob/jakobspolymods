@@ -76,7 +76,15 @@ class allthemodsweb extends PolyMod {
         }
 
         // install polyProxy mod if on Browser
-        if(this.includeProxy === true && runningElectron === false) {importPolyMod(this.polyProxy)}
+        if(this.includeProxy === true && runningElectron === false) 
+        {
+            console.info("Running web client, loading PolyProxy")
+            importPolyMod(this.polyProxy)
+        }
+        else
+        {
+            console.info("Running Electron client, skipping PolyProxy")
+        }
 
         // import and load mod list
         this.modList.forEach(({ url, version }) => {importPolyMod({url, version})});
