@@ -80,9 +80,6 @@ class allthemodsweb extends PolyMod {
 
         // import and load mod list
         this.modList.forEach(({ url, version }) => {importPolyMod({url, version})});
-
-        // unload Modpack mod after imports to prevent duplicate mod errors
-        pml.setModLoaded(this, false);
     }
 }
 
