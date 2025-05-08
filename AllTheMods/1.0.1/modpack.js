@@ -4,6 +4,11 @@ class allthemods extends PolyMod {
     init = (pml) => {
         this.pml = pml;
 
+        // check for mods in localStorage
+        const raw        = window.localStorage.getItem("polyMods");
+        const storedMods = raw ? JSON.parse(raw) : [];
+        const loadedBases = new Set(storedMods.map(m => m.base));
+
         // function to detect if run in Electron, ripped from is-electron library
         function isElectron() {
             // Renderer process
@@ -49,13 +54,10 @@ class allthemods extends PolyMod {
         function importPolyMod({ url: modurl, version: modversion }) {
             console.info(`⏳ Attempting to import mod: ${modurl}@${modversion}`);
             
-            // check for mods in localStorage
-            const raw = window.localStorage.getItem("polyMods");
-            const mods = raw
-            ? /** @type {{base:string,version:string,loaded:boolean}[]} */(JSON.parse(raw)) : [];
+            
 
             // skip if mod already installed
-            if (mods.some(m => m.base === modurl))
+            if (loadedBases.has(modurl))
             {
                 console.warn(`⚠️  Skipping import; already in polyMods: ${modurl}`);
                 return;
@@ -68,6 +70,7 @@ class allthemods extends PolyMod {
             })
             .then(mod => {
                pml.setModLoaded(mod, true);
+               loadedBases.add(modurl);
                console.info(`✅ Successfully imported: ${modurl}`);
             })
             .catch(err => {
