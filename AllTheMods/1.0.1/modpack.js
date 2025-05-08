@@ -1,4 +1,5 @@
 import { PolyMod } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
+import {isElectron} from "https://pml.orangy.cfd/CRJakob/jakobspolymods/isElectron.js"
 
 class allthemods extends PolyMod {
     init = (pml) => {
@@ -10,7 +11,7 @@ class allthemods extends PolyMod {
         const loadedBases = new Set(storedMods.map(m => m.base));
 
         // function to detect if run in Electron, ripped from is-electron library
-        function isElectron() {
+        /*function isElectron() {
             // Renderer process
             if (typeof window !== 'undefined' && typeof window.process === 'object' && window.process.type === 'renderer') {
                 return true;
@@ -25,6 +26,7 @@ class allthemods extends PolyMod {
             }
             return false;
         }
+        */
 
         // Mod List
         this.modList = [

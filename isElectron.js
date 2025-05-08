@@ -1,5 +1,4 @@
-// https://github.com/electron/electron/issues/2288
-function isElectron() {
+export function isElectron() {
     // Renderer process
     if (typeof window !== 'undefined' && typeof window.process === 'object' && window.process.type === 'renderer') {
         return true;
@@ -17,5 +16,3 @@ function isElectron() {
 
     return false;
 }
-
-module.exports = isElectron;
