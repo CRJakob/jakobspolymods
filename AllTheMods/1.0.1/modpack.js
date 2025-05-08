@@ -1,7 +1,7 @@
 import { PolyMod } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
 
 class allthemods extends PolyMod {
-    init = async (pml) => {
+    init = (pml) => {
         this.pml = pml;
 
         // check for mods in localStorage
@@ -10,7 +10,7 @@ class allthemods extends PolyMod {
         const loadedBases = new Set(storedMods.map(m => m.base));
 
         // function to detect if run in Electron, ripped from is-electron library
-        /*function isElectron() {
+        function isElectron() {
             // Renderer process
             if (typeof window !== 'undefined' && typeof window.process === 'object' && window.process.type === 'renderer') {
                 return true;
@@ -25,7 +25,6 @@ class allthemods extends PolyMod {
             }
             return false;
         }
-        */
 
         // Mod List
         this.modList = [
@@ -41,8 +40,6 @@ class allthemods extends PolyMod {
         // PolyProxy mod
         this.polyProxy = { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/polyproxy", version: "latest" };
         this.includeProxy = !0
-
-        const { isElectron } = await import("https://cdn.jsdelivr.net/gh/CRJakob/jakobspolymods@main/isElectron.js");
 
         // run Electron check
         let runningElectron = isElectron();
