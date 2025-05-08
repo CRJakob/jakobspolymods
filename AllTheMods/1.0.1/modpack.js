@@ -41,14 +41,8 @@ class allthemods extends PolyMod {
         this.polyProxy = { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/polyproxy", version: "latest" };
         this.includeProxy = !0
 
-        // debugging
-        console.log(this.modList);
-        let allloadedmods = pml.getAllMods();
-        console.log(allloadedmods);
-
         // run Electron check
         let runningElectron = isElectron();
-        console.log(runningElectron);
 
         // function for loading mods
         function importPolyMod({ url: modurl, version: modversion }) {
