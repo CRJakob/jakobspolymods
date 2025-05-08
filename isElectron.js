@@ -1,4 +1,4 @@
-export function isElectron() {
+function isElectron() {
     // Renderer process
     if (typeof window !== 'undefined' && typeof window.process === 'object' && window.process.type === 'renderer') {
         return true;
@@ -16,3 +16,5 @@ export function isElectron() {
 
     return false;
 }
+
+module.exports = isElectron;
