@@ -17,6 +17,10 @@ function isElectron() {
     return false;
 }
 
+function normalize(u) {
+    return new URL(u).href.replace(/\/+$/, "");
+}
+
 function importPolyMod({ url: modurl, version: modversion }) {
     console.info(`⏳ Attempting to import mod: ${modurl}@${modversion}`);
 
@@ -41,10 +45,6 @@ function importPolyMod({ url: modurl, version: modversion }) {
             console.error(`❌ Failed to import ${modurl}:`, err);
         });
     }
-}
-
-function normalize(u) {
-    return new URL(u).href.replace(/\/+$/, "");
 }
 
 export { normalize, importPolyMod, isElectron };

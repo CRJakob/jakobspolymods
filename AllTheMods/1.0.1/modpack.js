@@ -1,5 +1,5 @@
 import { PolyMod } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
-import { isElectron } from "https://pml.orangy.cfd/CRJakob/jakobspolymods/main/modpackTools.js";
+import { normalize, importPolyMod, isElectron } from "https://pml.orangy.cfd/CRJakob/jakobspolymods/main/modpackTools.js";
 
 class allthemods extends PolyMod {
   init = (pml) => {
