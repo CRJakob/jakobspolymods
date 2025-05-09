@@ -5,7 +5,7 @@ class allthemods extends PolyMod {
     this.pml = pml;
     this.includeProxy = true; 
     this.modList = [
-      { url: "https://pml.orangy.cfd/GameBuilder202/ErrorPopupMod/main", version: "latest" },
+      { url: "https://pml.orangy.cfd/GameBuilder202/PolyDebug/main", version: "latest" },
       { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/3decspeed", version: "latest" },
       { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/husplits", version: "latest" },
       { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/ghosttoggle", version: "latest" },
