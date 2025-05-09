@@ -27,29 +27,29 @@ class allthemods extends PolyMod {
 
         // function for loading mods
         function importPolyMod({ url: modurl, version: modversion }) {
-      console.info(`⏳ Attempting to import mod: ${modurl}@${modversion}`);
+          console.info(`⏳ Attempting to import mod: ${modurl}@${modversion}`);
 
-      // parse stored polyMods
-      const raw = window.localStorage.getItem("polyMods") || "[]";
+          // parse stored polyMods
+          const raw = window.localStorage.getItem("polyMods") || "[]";
 
-      const normUrl = normalize(modurl);
-      console.info(normUrl);
+          const normUrl = normalize(modurl);
+          console.info(normUrl);
 
-      if (raw.includes(normUrl)) {
-        // skip
-        console.warn(`⚠️  Skipping import; already in polyMods: ${modurl}`);
-      }
-      else {
-        // import mod
-        pml.addMod({ base: modurl, version: modversion, loaded: true })
-          .then(mod => {
-            pml.setModLoaded(mod, true);
-            console.info(`✅ Successfully imported: ${modurl}`);
-          })
-          .catch(err => {
-            console.error(`❌ Failed to import ${modurl}:`, err);
-          });
-      }
+          if (raw.includes(normUrl)) {
+            // skip
+            console.warn(`⚠️  Skipping import; already in polyMods: ${modurl}`);
+          }
+          else {
+            // import mod
+            pml.addMod({ base: modurl, version: modversion, loaded: true })
+            .then(mod => {
+              pml.setModLoaded(mod, true);
+              console.info(`✅ Successfully imported: ${modurl}`);
+            })
+            .catch(err => {
+              console.error(`❌ Failed to import ${modurl}:`, err);
+            });
+        }
     }
         
     // run Electron check
