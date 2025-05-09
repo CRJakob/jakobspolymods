@@ -6,6 +6,7 @@ class allthemods extends PolyMod {
         this.pml = pml;
 
         // Mod List
+        // { url: "the mod's url", version: "the mod version, use latest for newest mod version" } 
         this.modList = [
             { url: "https://pml.orangy.cfd/GameBuilder202/ErrorPopupMod/main", version: "latest" },
             { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/3decspeed", version: "latest" },
@@ -29,7 +30,7 @@ class allthemods extends PolyMod {
         function importPolyMod({ url: modurl, version: modversion }) {
           console.info(`⏳ Attempting to import mod: ${modurl}@${modversion}`);
 
-          // parse stored polyMods
+          // get polyMods object
           const raw = window.localStorage.getItem("polyMods") || "[]";
 
           const normUrl = normalize(modurl);
