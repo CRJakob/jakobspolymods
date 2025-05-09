@@ -20,18 +20,22 @@ class allthemods extends PolyMod {
         this.polyProxy = { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/polyproxy", version: "latest" };
         this.includeProxy = true;
 
+        // funtion to normalize urls
+        function normalize(u) {
+          return new URL(u).href.replace(/\/+$/, "");
+        }
+
         // function for loading mods
         function importPolyMod({ url: modurl, version: modversion }) {
       console.info(`⏳ Attempting to import mod: ${modurl}@${modversion}`);
 
       // parse stored polyMods
-      const raw     = window.localStorage.getItem("polyMods") || "[]";
-      const polyMods = JSON.parse(raw);
+      const raw = window.localStorage.getItem("polyMods") || "[]";
 
-      // check if installed
-      const alreadyInstalled = polyMods.some(m => m.base === modurl);
+      const normUrl = normalize(modurl);
+      console.info(normUrl);
 
-      if (alreadyInstalled) {
+      if (raw.includes(normUrl)) {
         // skip
         console.warn(`⚠️  Skipping import; already in polyMods: ${modurl}`);
       }
