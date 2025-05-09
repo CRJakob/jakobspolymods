@@ -1,3 +1,4 @@
+// function to detect if running on app version
 function isElectron() {
     // Renderer process
     if (typeof window !== 'undefined' && typeof window.process === 'object' && window.process.type === 'renderer') {
@@ -17,6 +18,7 @@ function isElectron() {
     return false;
 }
 
+// normalize url function
 function normalize(u) {
     return new URL(u).href.replace(/\/+$/, "");
 }
@@ -27,12 +29,15 @@ function importPolyMod({ url: modurl, version: modversion }) {
     // get polyMods object
     const raw = window.localStorage.getItem("polyMods") || "[]";
 
+    // normalize url
     const normUrl = normalize(modurl);
 
+    // avoid duplicate mod error
     if (raw.includes(normUrl)) {
         // skip
         console.warn(`⚠️  Skipping import; already in polyMods: ${modurl}`);
     }
+    // import mod if not already present
     else {
         // import mod
         pml.addMod({ base: modurl, version: modversion, loaded: true })
