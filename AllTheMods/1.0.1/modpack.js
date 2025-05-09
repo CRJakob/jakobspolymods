@@ -3,7 +3,11 @@ import { normalize, importPolyMod, isElectron } from "https://pml.orangy.cfd/CRJ
 
 class allthemods extends PolyMod {
   init = (pml) => {
+    // do not touch this
     this.pml = pml;
+
+    // include the polyProxy mod, true/false
+    this.includeProxy = true;
 
     // Mod List
     // { url: "the mod's url", version: "the mod version, use latest for newest mod version" } 
@@ -17,10 +21,11 @@ class allthemods extends PolyMod {
       { url: "https://pml.orangy.cfd/CRJakob/jakobspolymods/main/coolcars/", version: "latest" }
     ];
 
+
+
     // PolyProxy mod
     this.polyProxy = { url: "https://pml.orangy.cfd/0rangy/OrangysPolyMods/main/polyproxy", version: "latest" };
-    this.includeProxy = true;
-
+    
     // run Electron check
     let runningElectron = isElectron();
 
@@ -32,7 +37,7 @@ class allthemods extends PolyMod {
         console.info("Running Electron client, skipping PolyProxy")
     }
 
-      // import and load mod list
+    // import and load mod list
     this.modList.forEach(({ url, version }) => {importPolyMod({url, version})});
   }
 }

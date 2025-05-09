@@ -28,7 +28,6 @@ function importPolyMod({ url: modurl, version: modversion }) {
     const raw = window.localStorage.getItem("polyMods") || "[]";
 
     const normUrl = normalize(modurl);
-    console.info(normUrl);
 
     if (raw.includes(normUrl)) {
         // skip
@@ -37,8 +36,8 @@ function importPolyMod({ url: modurl, version: modversion }) {
     else {
         // import mod
         pml.addMod({ base: modurl, version: modversion, loaded: true })
-            .then(mod => {
-        pml.setModLoaded(mod, true);
+        .then(mod => {
+            pml.setModLoaded(mod, true);
             console.info(`✅ Successfully imported: ${modurl}`);
         })
         .catch(err => {
