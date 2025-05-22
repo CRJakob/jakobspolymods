@@ -1,5 +1,9 @@
 function setKeybinds(keybinds) {
-    window.localStorage.setItem();
+    window.localStorage.setItem("polytrack_v4_prod_key_bindings", keybinds);
 }
 
-export {};
+function setSettings(settings) {
+    window.localStorage.setItem("polytrack_v4_prod_settings", settings);
+}
+
+export { setKeybinds, setSettings };
