@@ -1,0 +1,43 @@
+name: Compile & Commit TypeScript on dev
+
+on:
+  push:
+    branches:
+      - dev
+
+permissions:
+  contents: write
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install TypeScript
+        run: npm install -g typescript --no-save
+
+      - name: Compile all TypeScript files (excluding specified folders)
+        run: npx tsc
+
+      - name: Commit compiled JS back to dev
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add **/*.js
+          if git diff --cached --quiet; then
+            echo "✅ No JS changes to commit"
+          else
+            git commit -m "chore: compile all TS → JS [skip ci]"
+            git push origin dev
+          fi
