@@ -3,7 +3,7 @@ name: Compile & Commit TypeScript on main
 on:
   push:
     branches:
-      - main
+      - dev
 
 permissions:
   contents: write
