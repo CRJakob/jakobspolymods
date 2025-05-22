@@ -16,10 +16,6 @@ async function loadKeybinds() {
     console.log('Raw keybinds:', keybindsText);
 }
 loadKeybinds().catch(console.error);
-function setKeybinds(keybinds) {
-    window.localStorage.setItem("polytrack_v4_prod_key_bindings", keybinds);
-    console.log("Keybinds set sucessfully");
-}
 class PolySettings extends PolyMod {
     constructor() {
         super(...arguments);
