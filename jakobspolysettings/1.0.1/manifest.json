@@ -1,0 +1,10 @@
+{
+    "polymod": {
+        "name": "Jakobs PolySettings",
+        "id": "jakobspolysettings",
+        "author": "CRJakob",
+        "targets": ["0.5.0"],
+        "main": "main.mod.js"
+    },
+    "dependencies": []
+}
