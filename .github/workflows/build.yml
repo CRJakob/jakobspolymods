@@ -1,9 +1,9 @@
-name: Compile & Commit TypeScript on dev
+name: Compile & Commit TypeScript on main
 
 on:
   push:
     branches:
-      - dev
+      - main
 
 permissions:
   contents: write
