@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ES2020",
+    "rootDir": ".",          // base directory
+    "outDir": ".",           // output in same structure
+    "noEmitOnError": false
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "PolyModLoader/**/*"
+  ]
+}
