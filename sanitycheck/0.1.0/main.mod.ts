@@ -11,12 +11,12 @@ class PolyPacks extends PolyMod {
         this.#pml = pmlInstance;
         this.#audioVolume = 1;
         
-        this.#pml.soundManager.registerSound('line1', '${this.modBaseUrl}/${this.modVersion}/assets/line1.flac');
-        this.#pml.soundManager.registerSound('line2', '${this.modBaseUrl}/${this.modVersion}/assets/line2.flac');
-        this.#pml.soundManager.registerSound('line3', '${this.modBaseUrl}/${this.modVersion}/assets/line3.flac');
-        this.#pml.soundManager.registerSound('line4', '${this.modBaseUrl}/${this.modVersion}/assets/line4.flac');
-        this.#pml.soundManager.registerSound('line5', '${this.modBaseUrl}/${this.modVersion}/assets/line5.flac');
-        this.#pml.soundManager.registerSound('line6', '${this.modBaseUrl}/${this.modVersion}/assets/line6.flac');
+        this.#pml.soundManager.registerSound('line1', `${this.modBaseUrl}/${this.modVersion}/assets/line1.flac`);
+        this.#pml.soundManager.registerSound('line2', `${this.modBaseUrl}/${this.modVersion}/assets/line2.flac`);
+        this.#pml.soundManager.registerSound('line3', `${this.modBaseUrl}/${this.modVersion}/assets/line3.flac`);
+        this.#pml.soundManager.registerSound('line4', `${this.modBaseUrl}/${this.modVersion}/assets/line4.flac`);
+        this.#pml.soundManager.registerSound('line5', `${this.modBaseUrl}/${this.modVersion}/assets/line5.flac`);
+        this.#pml.soundManager.registerSound('line6', `${this.modBaseUrl}/${this.modVersion}/assets/line6.flac`);
 
         
     };
@@ -29,7 +29,7 @@ class PolyPacks extends PolyMod {
             const randomIndex = Math.floor(Math.random() * audioNames.length);
             const selectedAudio = audioNames[randomIndex];
             this.#pml.soundManager.playSound(selectedAudio, this.#audioVolume);
-            console.log("playing sound ${selectedAudio}")
+            console.log(`playing sound ${selectedAudio}`)
         }, 1 * 1 * 1000);
     }
 }
