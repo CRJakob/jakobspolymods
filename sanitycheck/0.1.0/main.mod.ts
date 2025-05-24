@@ -2,7 +2,7 @@
 import { PolyMod, PolyModLoader } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
 
 
-class PolyPacks extends PolyMod {
+class sanitycheck extends PolyMod {
     // Mod specific stuff
     #pml: PolyModLoader;
     #audioVolume: number;
@@ -41,4 +41,4 @@ class PolyPacks extends PolyMod {
     }
 }
 
-export const polyMod = new PolyPacks();
+export const polyMod = new sanitycheck();

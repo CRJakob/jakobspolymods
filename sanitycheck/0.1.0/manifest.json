@@ -1,0 +1,10 @@
+{
+    "polymod": {
+        "name": "Sanity Check",
+        "id": "sanitycheck",
+        "author": "CRJakob",
+        "targets": ["0.5.0"],
+        "main": "main.mod.js"
+    },
+    "dependencies": []
+}
