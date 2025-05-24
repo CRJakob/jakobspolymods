@@ -6,6 +6,8 @@ class PolyPacks extends PolyMod {
     // Mod specific stuff
     #pml: PolyModLoader;
     #audioVolume: number;
+    modBaseUrl!: string;
+    modVersion!: string;
 
     init = (pmlInstance: PolyModLoader) => {
         this.#pml = pmlInstance;
