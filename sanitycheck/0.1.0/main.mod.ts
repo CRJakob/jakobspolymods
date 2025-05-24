@@ -20,11 +20,16 @@ class PolyPacks extends PolyMod {
         this.#pml.soundManager.registerSound('line5', `${this.modBaseUrl}/${this.modVersion}/assets/line5.flac`);
         this.#pml.soundManager.registerSound('line6', `${this.modBaseUrl}/${this.modVersion}/assets/line6.flac`);
 
+        this.#pml.registerSettingsCategory("Sanity Check");
+        // @ts-ignore
+        this.#pml.registerSetting("Sanity check volume", "sanityCheckVolume", SettingType.SLIDER, 1, NULL);
+
         
     };
 
     postInit = () => {
         const audioNames = ['line1', 'line2', 'line3', 'line4', 'line5', 'line6'];
+        this.#audioVolume = this.#pml.getSetting("sanityCheckVolume")
 
         // Play a random line every 30 minutes (30 * 60 * 1000 ms)
         setInterval(() => {
