@@ -4,32 +4,18 @@ var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
     return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
 };
-var _PolySettings_pml, _PolySettings_keybinds;
+var _PolySettings_pml;
 // @ts-ignore
 import { PolyMod } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
-async function loadKeybinds() {
-    const res = await fetch('/keybinds.txt');
-    if (!res.ok)
-        throw new Error(`HTTP ${res.status}`);
-    const keybindsText = await res.text();
-    return keybindsText;
-    console.log('Raw keybinds:', keybindsText);
-}
-loadKeybinds().catch(console.error);
-function setKeybinds(keybinds) {
-    window.localStorage.setItem("polytrack_v4_prod_key_bindings", keybinds);
-    console.log("Keybinds set sucessfully");
-}
 class PolySettings extends PolyMod {
     constructor() {
         super(...arguments);
         // Mod specific stuff
         _PolySettings_pml.set(this, void 0);
-        _PolySettings_keybinds.set(this, loadKeybinds());
         this.init = (pmlInstance) => {
             __classPrivateFieldSet(this, _PolySettings_pml, pmlInstance, "f");
         };
     }
 }
-_PolySettings_pml = new WeakMap(), _PolySettings_keybinds = new WeakMap();
+_PolySettings_pml = new WeakMap();
 export const polyMod = new PolySettings();
