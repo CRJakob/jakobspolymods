@@ -21,12 +21,12 @@ class PolyPacks extends PolyMod {
         this.init = (pmlInstance) => {
             __classPrivateFieldSet(this, _PolyPacks_pml, pmlInstance, "f");
             __classPrivateFieldSet(this, _PolyPacks_audioVolume, 1, "f");
-            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line1', '${this.modBaseUrl}/${this.modVersion}/assets/line1.flac');
-            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line2', '${this.modBaseUrl}/${this.modVersion}/assets/line2.flac');
-            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line3', '${this.modBaseUrl}/${this.modVersion}/assets/line3.flac');
-            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line4', '${this.modBaseUrl}/${this.modVersion}/assets/line4.flac');
-            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line5', '${this.modBaseUrl}/${this.modVersion}/assets/line5.flac');
-            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line6', '${this.modBaseUrl}/${this.modVersion}/assets/line6.flac');
+            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line1', `${this.modBaseUrl}/${this.modVersion}/assets/line1.flac`);
+            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line2', `${this.modBaseUrl}/${this.modVersion}/assets/line2.flac`);
+            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line3', `${this.modBaseUrl}/${this.modVersion}/assets/line3.flac`);
+            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line4', `${this.modBaseUrl}/${this.modVersion}/assets/line4.flac`);
+            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line5', `${this.modBaseUrl}/${this.modVersion}/assets/line5.flac`);
+            __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.registerSound('line6', `${this.modBaseUrl}/${this.modVersion}/assets/line6.flac`);
         };
         this.postInit = () => {
             const audioNames = ['line1', 'line2', 'line3', 'line4', 'line5', 'line6'];
@@ -35,7 +35,7 @@ class PolyPacks extends PolyMod {
                 const randomIndex = Math.floor(Math.random() * audioNames.length);
                 const selectedAudio = audioNames[randomIndex];
                 __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.playSound(selectedAudio, __classPrivateFieldGet(this, _PolyPacks_audioVolume, "f"));
-                console.log("playing sound ${selectedAudio}");
+                console.log(`playing sound ${selectedAudio}`);
             }, 1 * 1 * 1000);
         };
     }
