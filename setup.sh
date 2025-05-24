@@ -1,0 +1,9 @@
+#!/bin/bash
+
+npx tsc
+if [[ "$1" == "host" ]]; then
+    trap "trap - TERM && kill -- -$$" INT TERM EXIT
+    (cd PolyModLoader; python ../httpserver.py 8000 &> /dev/null) &
+    python httpserver.py 8001 &> /dev/null &
+    wait
+fi
