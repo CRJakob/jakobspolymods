@@ -35,7 +35,8 @@ class PolyPacks extends PolyMod {
                 const randomIndex = Math.floor(Math.random() * audioNames.length);
                 const selectedAudio = audioNames[randomIndex];
                 __classPrivateFieldGet(this, _PolyPacks_pml, "f").soundManager.playSound(selectedAudio, __classPrivateFieldGet(this, _PolyPacks_audioVolume, "f"));
-            }, 30 * 60 * 1000);
+                console.log("playing sound ${selectedAudio}");
+            }, 1 * 1 * 1000);
         };
     }
 }
