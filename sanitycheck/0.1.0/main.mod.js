@@ -21,17 +21,17 @@ class sanitycheck extends PolyMod {
         this.init = (pmlInstance) => {
             __classPrivateFieldSet(this, _sanitycheck_pml, pmlInstance, "f");
             __classPrivateFieldSet(this, _sanitycheck_audioVolume, 1, "f");
+            __classPrivateFieldGet(this, _sanitycheck_pml, "f").registerSettingsCategory("Sanity Check");
+            // @ts-ignore
+            __classPrivateFieldGet(this, _sanitycheck_pml, "f").registerSetting("Sanity check volume", "sanityCheckVolume", SettingType.SLIDER, 1, NULL);
+        };
+        this.postInit = () => {
             __classPrivateFieldGet(this, _sanitycheck_pml, "f").soundManager.registerSound('line1', `${this.modBaseUrl}/${this.modVersion}/assets/line1.flac`);
             __classPrivateFieldGet(this, _sanitycheck_pml, "f").soundManager.registerSound('line2', `${this.modBaseUrl}/${this.modVersion}/assets/line2.flac`);
             __classPrivateFieldGet(this, _sanitycheck_pml, "f").soundManager.registerSound('line3', `${this.modBaseUrl}/${this.modVersion}/assets/line3.flac`);
             __classPrivateFieldGet(this, _sanitycheck_pml, "f").soundManager.registerSound('line4', `${this.modBaseUrl}/${this.modVersion}/assets/line4.flac`);
             __classPrivateFieldGet(this, _sanitycheck_pml, "f").soundManager.registerSound('line5', `${this.modBaseUrl}/${this.modVersion}/assets/line5.flac`);
             __classPrivateFieldGet(this, _sanitycheck_pml, "f").soundManager.registerSound('line6', `${this.modBaseUrl}/${this.modVersion}/assets/line6.flac`);
-            __classPrivateFieldGet(this, _sanitycheck_pml, "f").registerSettingsCategory("Sanity Check");
-            // @ts-ignore
-            __classPrivateFieldGet(this, _sanitycheck_pml, "f").registerSetting("Sanity check volume", "sanityCheckVolume", SettingType.SLIDER, 1, NULL);
-        };
-        this.postInit = () => {
             const audioNames = ['line1', 'line2', 'line3', 'line4', 'line5', 'line6'];
             __classPrivateFieldSet(this, _sanitycheck_audioVolume, __classPrivateFieldGet(this, _sanitycheck_pml, "f").getSetting("sanityCheckVolume"), "f");
             // Play a random line every 30 minutes (30 * 60 * 1000 ms)
