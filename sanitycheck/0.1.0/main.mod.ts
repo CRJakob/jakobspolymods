@@ -1,5 +1,5 @@
 // @ts-ignore
-import { PolyMod, PolyModLoader } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
+import { PolyMod, PolyModLoader, SettingType } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
 
 
 class sanitycheck extends PolyMod {
@@ -13,9 +13,8 @@ class sanitycheck extends PolyMod {
         this.#pml = pmlInstance;
         this.#audioVolume = 1;
         
-        this.#pml.registerSettingsCategory("Sanity Check");
-        // @ts-ignore
-        this.#pml.registerSetting("Sanity check volume", "sanityCheckVolume", SettingType.SLIDER, 1, NULL);
+        this.#pml.registerSettingCategory("Sanity Check");
+        this.#pml.registerSetting("Sanity check volume", "sanityCheckVolume", SettingType.SLIDER, 1, null);
 
         
     };

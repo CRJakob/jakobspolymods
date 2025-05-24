@@ -11,7 +11,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 };
 var _sanitycheck_pml, _sanitycheck_audioVolume;
 // @ts-ignore
-import { PolyMod } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
+import { PolyMod, SettingType } from "https://pml.orangy.cfd/PolyTrackMods/PolyModLoader/0.5.0/PolyModLoader.js";
 class sanitycheck extends PolyMod {
     constructor() {
         super(...arguments);
@@ -21,9 +21,8 @@ class sanitycheck extends PolyMod {
         this.init = (pmlInstance) => {
             __classPrivateFieldSet(this, _sanitycheck_pml, pmlInstance, "f");
             __classPrivateFieldSet(this, _sanitycheck_audioVolume, 1, "f");
-            __classPrivateFieldGet(this, _sanitycheck_pml, "f").registerSettingsCategory("Sanity Check");
-            // @ts-ignore
-            __classPrivateFieldGet(this, _sanitycheck_pml, "f").registerSetting("Sanity check volume", "sanityCheckVolume", SettingType.SLIDER, 1, NULL);
+            __classPrivateFieldGet(this, _sanitycheck_pml, "f").registerSettingCategory("Sanity Check");
+            __classPrivateFieldGet(this, _sanitycheck_pml, "f").registerSetting("Sanity check volume", "sanityCheckVolume", SettingType.SLIDER, 1, null);
         };
         this.postInit = () => {
             __classPrivateFieldGet(this, _sanitycheck_pml, "f").soundManager.registerSound('line1', `${this.modBaseUrl}/${this.modVersion}/assets/line1.flac`);
