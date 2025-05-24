@@ -13,13 +13,6 @@ class sanitycheck extends PolyMod {
         this.#pml = pmlInstance;
         this.#audioVolume = 1;
         
-        this.#pml.soundManager.registerSound('line1', `${this.modBaseUrl}/${this.modVersion}/assets/line1.flac`);
-        this.#pml.soundManager.registerSound('line2', `${this.modBaseUrl}/${this.modVersion}/assets/line2.flac`);
-        this.#pml.soundManager.registerSound('line3', `${this.modBaseUrl}/${this.modVersion}/assets/line3.flac`);
-        this.#pml.soundManager.registerSound('line4', `${this.modBaseUrl}/${this.modVersion}/assets/line4.flac`);
-        this.#pml.soundManager.registerSound('line5', `${this.modBaseUrl}/${this.modVersion}/assets/line5.flac`);
-        this.#pml.soundManager.registerSound('line6', `${this.modBaseUrl}/${this.modVersion}/assets/line6.flac`);
-
         this.#pml.registerSettingsCategory("Sanity Check");
         // @ts-ignore
         this.#pml.registerSetting("Sanity check volume", "sanityCheckVolume", SettingType.SLIDER, 1, NULL);
@@ -28,6 +21,13 @@ class sanitycheck extends PolyMod {
     };
 
     postInit = () => {
+        this.#pml.soundManager.registerSound('line1', `${this.modBaseUrl}/${this.modVersion}/assets/line1.flac`);
+        this.#pml.soundManager.registerSound('line2', `${this.modBaseUrl}/${this.modVersion}/assets/line2.flac`);
+        this.#pml.soundManager.registerSound('line3', `${this.modBaseUrl}/${this.modVersion}/assets/line3.flac`);
+        this.#pml.soundManager.registerSound('line4', `${this.modBaseUrl}/${this.modVersion}/assets/line4.flac`);
+        this.#pml.soundManager.registerSound('line5', `${this.modBaseUrl}/${this.modVersion}/assets/line5.flac`);
+        this.#pml.soundManager.registerSound('line6', `${this.modBaseUrl}/${this.modVersion}/assets/line6.flac`);
+
         const audioNames = ['line1', 'line2', 'line3', 'line4', 'line5', 'line6'];
         this.#audioVolume = this.#pml.getSetting("sanityCheckVolume")
 
